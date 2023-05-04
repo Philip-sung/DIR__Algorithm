@@ -63,6 +63,22 @@ public:
 
 		return result;
 	}
+
+	float loadFactor(void) {
+		float table = data.size();
+		float key = 0;
+		float result = 0;
+
+		for (std::list<int> l : data) {
+			if (l.size() > 0) {
+				key++;
+			}
+		}
+
+		result = key / table;
+
+		return result;
+	}
 };
 
 #endif
